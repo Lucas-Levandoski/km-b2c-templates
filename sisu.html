@@ -120,8 +120,8 @@
 </body>
 <script>
   const header = document.querySelector(".heading")?.querySelector("h1");
-  header?.textContent = "HEY THERE!";
+  if (header) header.textContent = "HEY THERE!";
 
   const intro = document.querySelector(".intro")?.querySelector("h2");
-  intro?.textContent = "Sign In to Get Started";
+  if (intro) intro.textContent = "Sign In to Get Started";
 </script>
