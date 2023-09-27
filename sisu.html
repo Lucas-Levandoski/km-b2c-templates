@@ -3,6 +3,14 @@
 <head>
   <title>LLS Test</title>
   <style>
+    @font-face {
+      font-family: Termina;
+      src: url('https://knowledgeminersa.blob.core.windows.net/km-fonts/TerminaTest-Bold.otf');
+      font-weight: bold;
+      src: url('https://knowledgeminersa.blob.core.windows.net/km-fonts/TerminaTest-Medium.otf');
+      font-weight: medium;
+    }
+
     body {
       margin: 0;
       overflow: hidden;
@@ -41,12 +49,15 @@
     #api .heading h1 {
       margin-top: 0;
       margin-bottom: 11px;
+      font-family: Termina;
+      font-weight: bold;
     }
 
     #api .intro h2 {
       margin-top: 0;
       font-size: 18px;
       font-weight: normal;
+      font-family: Roboto;
     }
 
     #api .buttons button {
@@ -57,6 +68,9 @@
       padding: 18px 26px 18px 26px;
       margin-top: 1em;
       font-size: 18px;
+      font-family: Termina;
+      font-weight: Medium;
+      cursor: pointer;
     }
 
     #api .entry-item {
@@ -115,6 +129,7 @@
       <img class="home-image" src="https://knowledgeminersa.blob.core.windows.net/km-static-images/elasta-home-screen.svg" alt="elastacloud home">
     </div>
 
+    <!-- this div is dynamically populated by Azure AD B2C system -->
     <div id="api"></div>
   </div>
 </body>
