@@ -113,14 +113,16 @@
       opacity: 0.75;
     }
 
-    /* 
+    
     #api .divider {
-      display: none;
+      margin: 1em 0;
     }
 
     #api .create {
-      display: none;
-    } */
+      font-family: Roboto, sans-serif;
+      font-size: 1.2em;
+      font-weight: 400;
+    }
   </style>
 
   <script>
@@ -140,9 +142,28 @@
 
       const intro = document.querySelector(".intro")?.querySelector("h2");
       if (intro) intro.textContent = "Sign In to Get Started";
-    }
 
-    console.log('testing script');
+      const divider = document.querySelector(".divider");
+      if (divider) {
+        const dividerH2 = divider.querySelector('h2')
+
+        if (dividerH2) divider.removeChild(dividerH2);
+
+        divider.appendChild(document.createElement('hr'));
+      }
+
+      const create = document.querySelector('.create');
+
+      if (create) {
+        const createAccountAnchor = create.querySelector('#createAccount');
+        const createAccountParagraph = create.querySelector('p');
+
+        createAccountAnchor.textContent = 'Register';
+        
+        createAccountParagraph.textContent = 'Don’t have an account yet? ';
+        createAccountParagraph.appendChild(createAccountAnchor);
+      }
+    }
   </script>
 </head>
 
