@@ -197,6 +197,7 @@
 
   </div>
 </body>
+
 <script>
   var observer = new MutationObserver(() => {
     var apiElement = document.getElementById('api');
@@ -205,6 +206,7 @@
       observer.disconnect();
     }
   });
+
   observer.observe(document, { attributes: false, childList: true, characterData: false, subtree: true });
 
 
@@ -214,4 +216,6 @@
 
     console.log("api div is rendered", apiElement);
   }
+
+  console.log('testing script');
 </script>
