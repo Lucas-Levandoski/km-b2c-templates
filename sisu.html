@@ -17,11 +17,20 @@
       font-weight: normal;
     }
 
+
     body {
       margin: 0;
       overflow: hidden;
       font-family: Roboto, sans-serif;
       min-height: 100vh;
+    }
+
+    hr {
+      margin-top: 2em;
+      width: 100%;
+      border: 1px solid #293045;
+      border-left: 0;
+      border-right: 0;
     }
 
     .container {
@@ -65,18 +74,7 @@
       font-weight: normal;
     }
 
-    #api .buttons button {
-      background-color: #293045;
-      border: none;
-      color: white;
-      width: 100%;
-      padding: 18px 26px 18px 26px;
-      margin-top: 1em;
-      font-size: 18px;
-      font-family: Termina, sans-serif;
-      font-weight: Medium;
-      cursor: pointer;
-    }
+    /*Sign in Inputs*/
 
     #api .entry-item {
       display: flex;
@@ -118,6 +116,51 @@
       opacity: 0.75;
     }
 
+    /* Signup Inputs */
+
+    #api .attrEntry {
+      display: flex;
+      width: 100%;
+    }
+
+    #api .attrEntry label {
+      display: none;
+    }
+
+    #api .attrEntry a {
+      display: none;
+    }
+
+    #api .attrEntry input {
+      margin-top: 2em;
+      width: 100%;
+      border-radius: 0;
+      border: solid 1px #c4c4c4;
+      padding: 18px 26px 18px 26px;
+      color: #333333;
+    }
+
+    #api .attrEntry::placeholder {
+      color: #333333;
+      opacity: 0.75;
+    }
+
+    /* Buttons */
+
+    #api .buttons button {
+      background-color: #293045;
+      border: none;
+      color: white;
+      width: 100%;
+      padding: 18px 26px 18px 26px;
+      margin-top: 1em;
+      font-size: 18px;
+      font-family: Termina, sans-serif;
+      font-weight: Medium;
+      cursor: pointer;
+    }
+
+    /* Signin Buttons */
     
     #api .divider {
       margin: 1em 0;
@@ -127,6 +170,23 @@
       font-size: 1.2em;
       font-weight: 400;
     }
+
+    /* Signup Buttons */
+
+    #api .buttons #cancel {
+      background-color: white;
+      border: 2px solid #293045;
+      color: #293045;
+      width: 100%;
+    }
+
+    #api #emailVerificationControl_but_send_code {
+      background-color: white;
+      color: #293045;
+      border: solid 2px #293045;
+    }
+
+
   </style>
 
   <script>
@@ -141,6 +201,8 @@
     observer.observe(document, { attributes: false, childList: true, characterData: false, subtree: true });
 
     function init(apiElement) {
+      const hr = document.createElement('hr');
+
       const header = document.querySelector(".heading")?.querySelector("h1");
       if (header) header.textContent = "HEY THERE!";
 
@@ -153,7 +215,7 @@
 
         if (dividerH2) divider.removeChild(dividerH2);
 
-        divider.appendChild(document.createElement('hr'));
+        divider.appendChild(hr);
       }
 
       const create = document.querySelector('.create');
@@ -166,6 +228,9 @@
         
         createAccountParagraph.textContent = 'Don’t have an account yet? ';
         createAccountParagraph.appendChild(createAccountAnchor);
+
+      const verificationContent = document.querySelector('.verificationControlContent');
+      verificationContent.appendChild(hr);
       }
     }
   </script>
