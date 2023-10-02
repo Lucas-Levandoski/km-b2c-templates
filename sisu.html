@@ -135,9 +135,11 @@
     observer.observe(document, { attributes: false, childList: true, characterData: false, subtree: true });
 
     function init(apiElement) {
-      // do your stuff here
+      const header = document.querySelector(".heading")?.querySelector("h1");
+      if (header) header.textContent = "HEY THERE!";
 
-      console.log("api div is rendered", apiElement);
+      const intro = document.querySelector(".intro")?.querySelector("h2");
+      if (intro) intro.textContent = "Sign In to Get Started";
     }
 
     console.log('testing script');
