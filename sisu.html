@@ -112,7 +112,8 @@
       color: #333333;
       opacity: 0.75;
     }
-/* 
+
+    /* 
     #api .divider {
       display: none;
     }
@@ -197,7 +198,20 @@
   </div>
 </body>
 <script>
-  document.addEventListener('DOMContentLoaded', (doc, ev) => console.log('DOMContentLoaded', ev, document.querySelector(".heading")))
-  document.addEventListener('ended', (doc, ev) => console.log('ended', ev, document.querySelector(".heading")))
-  document.addEventListener('loadeddata', (doc, ev) => console.log('loadeddata', ev, document.querySelector(".heading")))
+  var observer = new MutationObserver(() => {
+    var apiElement = document.getElementById('api');
+    if (apiElement) {
+      init(apiElement);
+      observer.disconnect();
+    }
+  });
+  observer.observe(document, { attributes: false, childList: true, characterData: false, subtree: true });
+
+
+
+  function init(apiElement) {
+    // do your stuff here
+
+    console.log("api div is rendered", apiElement);
+  }
 </script>
