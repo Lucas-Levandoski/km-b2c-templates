@@ -208,6 +208,7 @@
       if (intro) intro.textContent = "Sign In to Get Started";
 
       const divider = document.querySelector(".divider");
+
       if (divider) {
         const dividerH2 = divider.querySelector('h2')
 
@@ -216,20 +217,21 @@
         divider.appendChild(hr);
       }
 
-      const create = document.querySelector('.create');
+      const createAccountAnchor = document.querySelector('.create')?.querySelector('#createAccount');
+      const createAccountParagraph = document.querySelector('.create')?.querySelector('p');
 
-      if (create) {
-        const createAccountAnchor = create.querySelector('#createAccount');
-        const createAccountParagraph = create.querySelector('p');
 
+      if (createAccountAnchor && createAccountParagraph) {
         createAccountAnchor.textContent = 'Register';
         
         createAccountParagraph.textContent = 'Don’t have an account yet? ';
         createAccountParagraph.appendChild(createAccountAnchor);
-
-      const verificationContent = document.querySelector('.verificationControlContent');
-      verificationContent.appendChild(hr);
       }
+      
+      const verificationContent = document.querySelector('.verificationControlContent');
+        
+      if (verificationContent) verificationContent.appendChild(hr);
+
     }
   </script>
 </head>
@@ -243,9 +245,9 @@
     </div>
 
     <!-- this div is dynamically populated by Azure AD B2C system -->
-    <div id="api"></div>
+    <!-- <div id="api"></div> -->
 
-    <!-- <div id="api" data-name="Unified">
+    <div id="api" data-name="Unified">
       <div class="heading">
         <h1 role="heading">Sign in</h1>
       </div>
@@ -302,7 +304,7 @@
           </p>
         </div>
       </form>
-    </div> -->
+    </div>
 
   </div>
 </body>
