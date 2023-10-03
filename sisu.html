@@ -136,6 +136,7 @@
     #api .attrEntry {
       display: flex;
       width: 100%;
+      flex-direction: column;
     }
 
     #api .attrEntry label {
@@ -149,10 +150,15 @@
     #api .attrEntry input {
       margin-top: 2em;
       width: 100%;
+      box-sizing: border-box;
       border-radius: 0;
       border: solid 1px #c4c4c4;
       padding: 18px 26px 18px 26px;
       color: #333333;
+    }
+
+    #api .attrEntry .error {
+      color: #c74848;
     }
 
     #api .attrEntry::placeholder {
@@ -194,6 +200,13 @@
     /* Signup Buttons */
 
     #api .buttons #cancel {
+      background-color: white;
+      border: 2px solid #293045;
+      color: #293045;
+      width: 100%;
+    }
+
+    #api .buttons #sendNewCode {
       background-color: white;
       border: 2px solid #293045;
       color: #293045;
@@ -365,15 +378,18 @@
                   </div>
                   <ul>
                     <li class="EmailBox email_li email" aria-hidden="false" style="display: inline;">
-                      <div class="attrEntry"><label id="email_label" for="email" class="required">Email Address</label>
-                        <div class="error itemLevel" role="alert"></div><input id="email" class="textInput" type="email"
-                          placeholder="Email Address"
+                      <div class="attrEntry">
+                        <label id="email_label" for="email" class="required">Email Address</label>
+                        <div class="error itemLevel show" role="alert" aria-hidden="false" aria-label="">Email Address is required.</div>
+                        <input id="email" class="textInput" type="email" placeholder="Email Address"
                           pattern="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"
                           title="Email address that can be used to contact you." aria-required="true"
                           autofocus="autofocus"><a class="helpLink tiny" href="javascript:void(0)"
                           data-help="Email address that can be used to contact you.">What is this?</a>
                       </div>
                     </li>
+
+
                     <li class="TextBox emailVerificationCode_li VerificationCode" aria-hidden="true"
                       style="display: none;">
                       <div class="attrEntry"><label id="emailVerificationCode_label" for="emailVerificationCode"
