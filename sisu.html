@@ -208,8 +208,8 @@
   </style>
 
   <script>
-    var observer = new MutationObserver(() => {
-      var apiElement = document.getElementById('api');
+    const observer = new MutationObserver(() => {
+      const apiElement = document.getElementById('api');
       if (apiElement) {
         init(apiElement);
         observer.disconnect();
