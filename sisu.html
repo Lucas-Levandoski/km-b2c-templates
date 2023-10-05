@@ -232,54 +232,54 @@
   </style>
 
   <script>
-    const observer = new MutationObserver(() => {
-      const apiElement = document.getElementById('api');
-      if (apiElement) {
-        init(apiElement);
-        observer.disconnect();
-      }
-    });
+    // const observer = new MutationObserver(() => {
+    //   const apiElement = document.getElementById('api');
+    //   if (apiElement) {
+    //     init(apiElement);
+    //     observer.disconnect();
+    //   }
+    // });
 
-    observer.observe(document, { attributes: false, childList: true, characterData: false, subtree: true });
+    // observer.observe(document, { attributes: false, childList: true, characterData: false, subtree: true });
 
-    function init(apiElement) {
-      const hr = document.createElement('hr');
+    // function init(apiElement) {
+    //   const hr = document.createElement('hr');
 
-      //generic elements
-      const header = document.querySelector(".heading h1");
-      if (header) header.textContent = "HEY THERE!";
+    //   //generic elements
+    //   const header = document.querySelector(".heading h1");
+    //   if (header) header.textContent = "HEY THERE!";
 
-      const intro = document.querySelector(".intro h2");
-      if (intro) intro.textContent = "Sign In to Get Started";
+    //   const intro = document.querySelector(".intro h2");
+    //   if (intro) intro.textContent = "Sign In to Get Started";
 
-      //works on signin page
+    //   //works on signin page
 
-      const divider = document.querySelector(".divider");
+    //   const divider = document.querySelector(".divider");
 
-      if (divider) {
-        const dividerH2 = divider.querySelector('h2')
+    //   if (divider) {
+    //     const dividerH2 = divider.querySelector('h2')
 
-        if (dividerH2) divider.removeChild(dividerH2);
+    //     if (dividerH2) divider.removeChild(dividerH2);
 
-        divider.appendChild(hr);
-      }
+    //     divider.appendChild(hr);
+    //   }
 
-      const createAccountAnchor = document.querySelector('.create')?.querySelector('#createAccount');
-      const createAccountParagraph = document.querySelector('.create')?.querySelector('p');
+    //   const createAccountAnchor = document.querySelector('.create')?.querySelector('#createAccount');
+    //   const createAccountParagraph = document.querySelector('.create')?.querySelector('p');
 
-      if (createAccountAnchor && createAccountParagraph && createButton) {
-        createAccountAnchor.textContent = 'Register';
+    //   if (createAccountAnchor && createAccountParagraph && createButton) {
+    //     createAccountAnchor.textContent = 'Register';
 
-        createAccountParagraph.textContent = 'Don’t have an account yet? ';
-        createAccountParagraph.appendChild(createAccountAnchor);
+    //     createAccountParagraph.textContent = 'Don’t have an account yet? ';
+    //     createAccountParagraph.appendChild(createAccountAnchor);
 
-        createButton.setAttribute(disabled, true);
-      }
+    //     createButton.setAttribute(disabled, true);
+    //   }
 
-      // works on signup page
+    //   // works on signup page
 
-      const createButton = document.querySelector('#continue');
-      const attributeList = document.querySelector('#attributeList ul');
+    //   const createButton = document.querySelector('#continue');
+    //   const attributeList = document.querySelector('#attributeList ul');
       
       // if(createButton && attributeList) {
         // const termsLi = document.createElement('li');
