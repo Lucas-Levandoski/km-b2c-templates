@@ -267,14 +267,14 @@
       const createAccountAnchor = document.querySelector('.create #createAccount');
       const createAccountParagraph = document.querySelector('.create p');
 
-      // if (createAccountAnchor && createAccountParagraph && createButton) {
-      //   createAccountAnchor.textContent = 'Register';
+      if (createAccountAnchor && createAccountParagraph && createButton) {
+        createAccountAnchor.textContent = 'Register';
 
-      //   createAccountParagraph.textContent = 'Don’t have an account yet? ';
-      //   createAccountParagraph.appendChild(createAccountAnchor);
+        createAccountParagraph.textContent = 'Don’t have an account yet? ';
+        createAccountParagraph.appendChild(createAccountAnchor);
 
-      //   createButton.setAttribute(disabled, true);
-      // }
+        createButton.setAttribute(disabled, true);
+      }
 
     //   // works on signup page
 
