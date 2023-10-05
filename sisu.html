@@ -166,6 +166,11 @@
       opacity: 0.75;
     }
 
+    #api .checkbox {
+      margin-top: 35px;
+      white-space: break-spaces;
+    }
+
     /* Buttons */
 
     #api .buttons button {
@@ -174,7 +179,7 @@
       color: white;
       width: 100%;
       padding: 18px 26px 18px 26px;
-      margin-top: 1em;
+      margin-top: 18px;
       font-size: 18px;
       font-family: Termina, sans-serif;
       font-weight: Medium;
@@ -185,6 +190,11 @@
     #api .buttons {
       display: flex;
       gap: 20px;
+    }
+    
+    #api .buttons button:disabled {
+      opacity: 0.5;
+      cursor: default;
     }
 
     /* Signin Buttons */
@@ -235,11 +245,14 @@
     function init(apiElement) {
       const hr = document.createElement('hr');
 
+      //generic elements
       const header = document.querySelector(".heading")?.querySelector("h1");
       if (header) header.textContent = "HEY THERE!";
 
       const intro = document.querySelector(".intro")?.querySelector("h2");
       if (intro) intro.textContent = "Sign In to Get Started";
+
+      //works on signin page
 
       const divider = document.querySelector(".divider");
 
@@ -254,12 +267,35 @@
       const createAccountAnchor = document.querySelector('.create')?.querySelector('#createAccount');
       const createAccountParagraph = document.querySelector('.create')?.querySelector('p');
 
-
-      if (createAccountAnchor && createAccountParagraph) {
+      if (createAccountAnchor && createAccountParagraph && createButton) {
         createAccountAnchor.textContent = 'Register';
 
         createAccountParagraph.textContent = 'Don’t have an account yet? ';
         createAccountParagraph.appendChild(createAccountAnchor);
+
+        createButton.setAttribute(disabled, true);
+      }
+
+      // works on signup page
+
+      const createButton = document.querySelector('#continue');
+      const attributeList = document.querySelector('#attributeList')?.querySelector('ul');
+      
+      if(createButton && attributeList) {
+        const termsLi = document.createElement('li');
+        
+        termsLi.setAttribute('class', 'checkbox terms_li');
+        termsLi.innerHTML = '<input type="checkbox" id="terms-checkbox">I agree with the <a href="/">Terms & Conditions</a> and <a href="/">Privacy Policy</a>.</input>'
+        
+        attributeList.appendChild(termsLi);
+
+        const termsInput = termsLi.querySelector('#terms-checkbox');
+
+        createButton.disabled = true;
+
+        termsInput.addEventListener('change', (input, event) => {
+          createButton.disabled = !input.target.checked;
+        })
       }
     }
   </script>
