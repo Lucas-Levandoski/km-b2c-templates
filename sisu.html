@@ -267,36 +267,34 @@
       const createAccountAnchor = document.querySelector('.create #createAccount');
       const createAccountParagraph = document.querySelector('.create p');
 
-      if (createAccountAnchor && createAccountParagraph && createButton) {
+      if (createAccountAnchor && createAccountParagraph) {
         createAccountAnchor.textContent = 'Register';
 
         createAccountParagraph.textContent = 'Don’t have an account yet? ';
         createAccountParagraph.appendChild(createAccountAnchor);
-
-        createButton.setAttribute(disabled, true);
       }
 
-    //   // works on signup page
+      // works on signup page
 
-    //   const createButton = document.querySelector('#continue');
-    //   const attributeList = document.querySelector('#attributeList ul');
+      const createButton = document.querySelector('#continue');
+      const attributeList = document.querySelector('#attributeList ul');
       
-      // if(createButton && attributeList) {
-        // const termsLi = document.createElement('li');
-        // 
-        // termsLi.setAttribute('class', 'checkbox terms_li');
-        // termsLi.innerHTML = '<input type="checkbox" id="terms-checkbox">I agree with the <a href="/">Terms & Conditions</a> and <a href="/">Privacy Policy</a>.</input>'
-        // 
-        // attributeList.appendChild(termsLi);
-// 
-        // const termsInput = termsLi.querySelector('#terms-checkbox');
-// 
-        // createButton.disabled = true;
-// 
-        // termsInput.addEventListener('change', (input, event) => {
-          // createButton.disabled = !input.target.checked;
-        // })
-      // }
+      if(createButton && attributeList) {
+        const termsLi = document.createElement('li');
+        
+        termsLi.setAttribute('class', 'checkbox terms_li');
+        termsLi.innerHTML = '<input type="checkbox" id="terms-checkbox">I agree with the <a href="/">Terms & Conditions</a> and <a href="/">Privacy Policy</a>.</input>'
+        
+        attributeList.appendChild(termsLi);
+
+        const termsInput = termsLi.querySelector('#terms-checkbox');
+
+        createButton.disabled = true;
+
+        termsInput.addEventListener('change', (input, event) => {
+          createButton.disabled = !input.target.checked;
+        })
+      }
     }
   </script>
 </head>
