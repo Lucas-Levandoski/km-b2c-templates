@@ -252,17 +252,17 @@
       const intro = document.querySelector(".intro h2");
       if (intro) intro.textContent = "Sign In to Get Started";
 
-      //works on signin page
+      // works on signin page
 
-      // const divider = document.querySelector(".divider");
+      const divider = document.querySelector(".divider");
 
-      // if (divider) {
-      //   const dividerH2 = divider.querySelector('h2')
+      if (divider) {
+        const dividerH2 = divider.querySelector('h2')
 
-      //   if (dividerH2) divider.removeChild(dividerH2);
+        if (dividerH2) divider.removeChild(dividerH2);
 
-      //   divider.appendChild(hr);
-      // }
+        divider.appendChild(hr);
+      }
 
       // const createAccountAnchor = document.querySelector('.create')?.querySelector('#createAccount');
       // const createAccountParagraph = document.querySelector('.create')?.querySelector('p');
