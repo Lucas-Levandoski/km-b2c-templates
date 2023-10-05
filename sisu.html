@@ -246,10 +246,10 @@
       const hr = document.createElement('hr');
 
       //generic elements
-      const header = document.querySelector(".heading")?.querySelector("h1");
+      const header = document.querySelector(".heading h1");
       if (header) header.textContent = "HEY THERE!";
 
-      const intro = document.querySelector(".intro")?.querySelector("h2");
+      const intro = document.querySelector(".intro h2");
       if (intro) intro.textContent = "Sign In to Get Started";
 
       //works on signin page
@@ -279,24 +279,24 @@
       // works on signup page
 
       const createButton = document.querySelector('#continue');
-      const attributeList = document.querySelector('#attributeList')?.querySelector('ul');
+      const attributeList = document.querySelector('#attributeList ul');
       
-      if(createButton && attributeList) {
-        const termsLi = document.createElement('li');
-        
-        termsLi.setAttribute('class', 'checkbox terms_li');
-        termsLi.innerHTML = '<input type="checkbox" id="terms-checkbox">I agree with the <a href="/">Terms & Conditions</a> and <a href="/">Privacy Policy</a>.</input>'
-        
-        attributeList.appendChild(termsLi);
-
-        const termsInput = termsLi.querySelector('#terms-checkbox');
-
-        createButton.disabled = true;
-
-        termsInput.addEventListener('change', (input, event) => {
-          createButton.disabled = !input.target.checked;
-        })
-      }
+      // if(createButton && attributeList) {
+        // const termsLi = document.createElement('li');
+        // 
+        // termsLi.setAttribute('class', 'checkbox terms_li');
+        // termsLi.innerHTML = '<input type="checkbox" id="terms-checkbox">I agree with the <a href="/">Terms & Conditions</a> and <a href="/">Privacy Policy</a>.</input>'
+        // 
+        // attributeList.appendChild(termsLi);
+// 
+        // const termsInput = termsLi.querySelector('#terms-checkbox');
+// 
+        // createButton.disabled = true;
+// 
+        // termsInput.addEventListener('change', (input, event) => {
+          // createButton.disabled = !input.target.checked;
+        // })
+      // }
     }
   </script>
 </head>
